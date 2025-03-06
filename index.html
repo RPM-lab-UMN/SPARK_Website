@@ -6,7 +6,7 @@
         content="SPARK-Remote: A Cost-Effective System for Remote Bimanual Robot Teleoperation">
   <meta name="keywords" content="Transformers, Language Grounding, Manipulation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PerAct</title>
+  <title>SPARK</title>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV4ZJ9PVSV"></script>
   <script>
@@ -70,143 +70,31 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
-<body onload="updateSingleVideo(); updateQpredVideo();">
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" target="_blank" href="https://mohitshridhar.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" target="_blank" href="https://cliport.github.io">
-            CLIPort
-          </a>
-          <a class="navbar-item" target="_blank" href="https://askforalfred.com/">
-            ALFRED
-          </a>
-          <a class="navbar-item" target="_blank" href="http://alfworld.github.io/">
-            ALFWorld
-          </a>
-          <a class="navbar-item" target="_blank" href="https://arxiv.org/pdf/1806.03831.pdf">
-            INGRESS
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
+<body>
 
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Perceiver-Actor: A Multi-Task Transformer <br> for Robotic Manipulation</h1>
-          <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">CoRL 2022</a></h3>
+          <h1 class="title is-1 publication-title">SPARK-Remote:: A Cost-Effective System for Remote Bimanual <br> Robot Teleoperations</h1>
+          <!-- <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">CoRL 2022</a></h3> -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a target="_blank" href="https://mohitshridhar.com/">Mohit Shridhar</a><sup>1</sup>,</span>
+              <a target="_blank" href="https://github.com/RPM-lab-UMN">Adam Imdieke</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a target="_blank" href="http://lucasmanuelli.com/">Lucas Manuelli</a><sup>2</sup>,</span>
-            <span class="author-block">
+              <a target="_blank" href="https://github.com/RPM-lab-UMN">Karthik Desingh</a><sup>1</sup>,</span>
+            <!-- <span class="author-block">
               <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1, 2</sup>
-            </span>
+            </span> -->
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>NVIDIA</span>
+            <span class="author-block"><sup>1</sup>University of Minnesota,</span>
           </div>
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a target="_blank" href="paper/peract_corl2022.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
 
-            <!-- Arxiv Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://arxiv.org/abs/2209.05451"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fas fa-file"></i>
-                </span>
-                <span>ArXiv</span>
-              </a>
-            </span>
-
-            <!-- Video Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://www.youtube.com/watch?v=TB0g52N-3_Y"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fab fa-youtube"></i>
-                </span>
-                <span>Video</span>
-              </a>
-            </span>
-
-            <!-- Talk Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://youtu.be/QcuXwmQgurE"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                </span>
-                <span>Talk</span>
-              </a>
-            </span>
-
-
-            <!-- Colab Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://colab.research.google.com/drive/1HAqemP4cE81SQ6QO1-N85j5bF4C0qLs0?usp=sharing"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fa fa-book" aria-hidden="true"></i>
-                </span>
-                <span>Colab</span>
-                </a>
-            </span>
-
-            <!-- Code Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://github.com/peract/peract"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fab fa-github"></i>
-                </span>
-                <span>Code</span>
-                </a>
-            </span>
-
-            </div>
-          </div>
-<!--           <br>
-          <br> -->
 
 
         </div>
@@ -214,83 +102,6 @@
     </div>
   </div>
 </section>
-
-<section class="hero teaser">
-  <div class="container is-fullhd">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-vcentered  is-centered">
-          <video id="teaser" autoplay muted loop height="100%">
-            <source src="media/intro/sim_rolling_v2.mp4"
-                    type="video/mp4">
-          </video>
-          </br>
-        </div>
-        <br>
-        <h2 class="subtitle has-text-centered">
-        <span class="dperact">PerAct</span> is an end-to-end behavior-cloning agent that can learn <br><b>a single language-conditioned policy</b> for 18 RLBench tasks with <b>249 unique task variations</b>
-        </h2>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay muted loop height="100%">
-            <source src="media/intro/1_handsan.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay muted loop height="100%">
-            <source src="media/intro/2_food_bin.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/intro/4_drawer.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay muted loop height="100%">
-            <source src="media/intro/3_marker.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/intro/5_stick.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/intro/7_sweeping.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-       <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay muted loop height="100%">
-            <source src="media/intro/6_blocks.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<h2 class="subtitle has-text-centered">
-</br>
-  We also train <b>one multi-task Transformer from scratch</b> on 7 real-world tasks with just <b>53 demos</b> in total.
-</h2>
 
 
 <section class="section">
