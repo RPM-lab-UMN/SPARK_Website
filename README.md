@@ -1,6 +1,4 @@
-# PerAct
-
-Anonymous Submission. 
+# SPARK 
 
 
 # Website License

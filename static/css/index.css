@@ -188,3 +188,6 @@ body {
   text-align: justify;
 }
 
+.is-max-desktop {
+  max-width: 90%;
+}
