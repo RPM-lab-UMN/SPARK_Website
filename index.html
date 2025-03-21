@@ -8,51 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SPARK</title>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV4ZJ9PVSV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-FV4ZJ9PVSV');
-  </script>
-
-  <script>
-    function updateSingleVideo() {
-      var demo = document.getElementById("single-menu-demos").value;
-      var task = document.getElementById("single-menu-tasks").value;
-      var inst = document.getElementById("single-menu-instances").value;
-
-      console.log("single", demo, task, inst)
-
-      var video = document.getElementById("multi-task-result-video");
-      video.src = "media/results/sim_rollouts/" + 
-                  "n" +
-                  demo +
-                  "-" +
-                  task +
-                  "-" +
-                  inst +
-                  ".mp4"
-      video.playbackRate = 1.75;
-      video.play();
-    }
-
-    function updateQpredVideo() {
-      var task = document.getElementById("single-menu-qpred").value;
-
-      console.log("qpred", task)
-
-      var video = document.getElementById("q-pred-video");
-      video.src = "media/results/qpred/" + 
-                  task + 
-                  ".mp4"
-      video.playbackRate = 1.75;
-      video.play();
-    }
-
-  </script>
-
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
@@ -68,7 +23,7 @@
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <!-- <script src="./static/js/index.js"></script> -->
 </head>
 
 <body>
@@ -138,102 +93,195 @@
 
   <br>
   <br>
+  <!-- Add a dropdown menu for task selection -->
+  
+  </section>
 
   <!-- Results. -->
   <section class="section">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Results</h2>
+
+        <section class="section">
+          <div class="columns is-vcentered">
+            <div class="column is-narrow">
+              <label class="label">Select a Task</label>
+            </div>
+            <div class="column is-narrow">
+              <div class="control">
+                <div class="select">
+                  <select id="taskSelector">
+                    <option value="all">All Tasks</option>
+                    <option value="bag">Bag</option>
+                    <option value="chess">Chess</option>
+                    <option value="handover">Handover</option>
+                    <option value="knot">Knot</option>
+                    <option value="markers">Markers</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="column is-narrow">
+              <button id="playVisibleVideos" class="button is-primary">Play Videos</button>
+            </div>
+            <!-- Add a Reset Videos button -->
+            <div class="column is-narrow">
+              <button id="resetVideos" class="button is-danger">Reset Videos</button>
+            </div>
+          </div>
+        </section>
+
         <div class="content has-text-justified">
-            <div class="columns is-multiline">
-            <!-- Bag GIFs -->
-            <div class="column is-one-quarter">
+            <div class="columns is-multiline" id="videosContainer">
+            <!-- Bag Videos -->
+            <div class="column is-one-quarter task-videos bag">
               <h3 class="title is-5">Bag - Basic</h3>
-              <img src="./videos/GIF/Basic/bag.gif" alt="Bag Basic">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/Basic/bag.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos bag">
               <h3 class="title is-5">Bag - FC</h3>
-              <img src="./videos/GIF/FC/bag.gif" alt="Bag FC">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FC/bag.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos bag">
               <h3 class="title is-5">Bag - FG</h3>
-              <img src="./videos/GIF/FG/bag.gif" alt="Bag FG">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FG/bag.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos bag">
               <h3 class="title is-5">Bag - FGC</h3>
-              <img src="./videos/GIF/FGC/bag.gif" alt="Bag FGC">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FGC/bag.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
 
-            <!-- Chess GIFs -->
-            <div class="column is-one-quarter">
+            <!-- Chess Videos -->
+            <div class="column is-one-quarter task-videos chess">
               <h3 class="title is-5">Chess - Basic</h3>
-              <img src="./videos/GIF/Basic/chess.gif" alt="Chess Basic">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/Basic/chess.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos chess">
               <h3 class="title is-5">Chess - FC</h3>
-              <img src="./videos/GIF/FC/chess.gif" alt="Chess FC">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FC/chess.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos chess">
               <h3 class="title is-5">Chess - FG</h3>
-              <img src="./videos/GIF/FG/chess.gif" alt="Chess FG">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FG/chess.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos chess">
               <h3 class="title is-5">Chess - FGC</h3>
-              <img src="./videos/GIF/FGC/chess.gif" alt="Chess FGC">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FGC/chess.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
 
-            <!-- Handover GIFs -->
-            <div class="column is-one-quarter">
+            <!-- Handover Videos -->
+            <div class="column is-one-quarter task-videos handover">
               <h3 class="title is-5">Handover - Basic</h3>
-              <img src="./videos/GIF/Basic/handover.gif" alt="Handover Basic">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/Basic/handover.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos handover">
               <h3 class="title is-5">Handover - FC</h3>
-              <img src="./videos/GIF/FC/handover.gif" alt="Handover FC">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FC/handover.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos handover">
               <h3 class="title is-5">Handover - FG</h3>
-              <img src="./videos/GIF/FG/handover.gif" alt="Handover FG">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FG/handover.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos handover">
               <h3 class="title is-5">Handover - FGC</h3>
-              <img src="./videos/GIF/FGC/handover.gif" alt="Handover FGC">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FGC/handover.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
 
-            <!-- Knot GIFs -->
-            <div class="column is-one-quarter">
+            <!-- Knot Videos -->
+            <div class="column is-one-quarter task-videos knot">
               <h3 class="title is-5">Knot - Basic</h3>
-              <img src="./videos/GIF/Basic/knot.gif" alt="Knot Basic">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/Basic/knot.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos knot">
               <h3 class="title is-5">Knot - FC</h3>
-              <img src="./videos/GIF/FC/knot.gif" alt="Knot FC">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FC/knot.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos knot">
               <h3 class="title is-5">Knot - FG</h3>
-              <img src="./videos/GIF/FG/knot.gif" alt="Knot FG">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FG/knot.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos knot">
               <h3 class="title is-5">Knot - FGC</h3>
-              <img src="./videos/GIF/FGC/knot.gif" alt="Knot FGC">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FGC/knot.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
 
-            <!-- Markers GIFs -->
-            <div class="column is-one-quarter">
+            <!-- Markers Videos -->
+            <div class="column is-one-quarter task-videos markers">
               <h3 class="title is-5">Markers - Basic</h3>
-              <img src="./videos/GIF/Basic/markers.gif" alt="Markers Basic">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/Basic/markers.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos markers">
               <h3 class="title is-5">Markers - FC</h3>
-              <img src="./videos/GIF/FC/markers.gif" alt="Markers FC">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FC/markers.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos markers">
               <h3 class="title is-5">Markers - FG</h3>
-              <img src="./videos/GIF/FG/markers.gif" alt="Markers FG">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FG/markers.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-one-quarter task-videos markers">
               <h3 class="title is-5">Markers - FGC</h3>
-              <img src="./videos/GIF/FGC/markers.gif" alt="Markers FGC">
+              <video controlslist="nodownload noremoteplayback" disablePictureInPicture>
+                <source src="./videos/MP4/FGC/markers.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
@@ -242,20 +290,18 @@
   </section>
   <!--/ Results. -->
 
-  <!-- Body of website -->
-   
 
   <footer class="footer">
-    <!-- <div class="container">
+    <div class="container">
       <div class="content has-text-centered">
         <a class="icon-link"
-           href="./static/videos/nerfies_paper.pdf">
+           href="./static/SPARK_IROS-15.pdf" target="_blank">
           <i class="fas fa-file-pdf"></i>
         </a>
-        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <a class="icon-link" href="https://github.com/RPM-lab-UMN/SPARK-Remote" class="external-link" target="_blank" disabled>
           <i class="fab fa-github"></i>
         </a>
-      </div> -->
+      </div>
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
@@ -276,6 +322,42 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // JavaScript to handle task selection and filtering
+    document.getElementById('taskSelector').addEventListener('change', function () {
+      const selectedTask = this.value;
+      const videoSections = document.querySelectorAll('.task-videos');
+
+      videoSections.forEach(section => {
+        if (selectedTask === 'all' || section.classList.contains(selectedTask)) {
+          section.style.display = 'block';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    });
+
+    // JavaScript to play all visible videos
+    document.getElementById('playVisibleVideos').addEventListener('click', function () {
+      const visibleVideos = Array.from(document.querySelectorAll('.task-videos video')).filter(video => {
+        const section = video.closest('.task-videos');
+        return window.getComputedStyle(section).display !== 'none';
+      });
+      visibleVideos.forEach(video => {
+        video.play();
+      });
+    });
+
+    // JavaScript to reset all videos
+    document.getElementById('resetVideos').addEventListener('click', function () {
+      const allVideos = document.querySelectorAll('.task-videos video');
+      allVideos.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+  </script>
 
 </body>
 </html>

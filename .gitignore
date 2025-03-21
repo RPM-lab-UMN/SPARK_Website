@@ -1,2 +1,2 @@
 # Do not track anything in the videos/ directory
-*.mp4
+static/extra
