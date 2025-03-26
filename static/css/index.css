@@ -191,3 +191,33 @@ body {
 .is-max-desktop {
   max-width: 90%;
 }
+
+p {
+  text-indent: 2em; /* Adjust the value as needed */
+  font-size: 1.25em;
+}
+
+.author-block {
+  font-size: 1.5em; /* Adjust the value as needed for bigger text */
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 1em;
+  color: #d63384;
+  white-space: pre-wrap;
+}
+
+pre {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f4f4f4;
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 1em;
+  color: #333;
+  white-space: pre-wrap;
+}
