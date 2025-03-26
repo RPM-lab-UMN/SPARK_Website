@@ -236,8 +236,15 @@ if __name__ == "__main__":
 
   <!-- Intuitions Section -->
   <section class="section">
-    <h2 class="title is-3">Intuitions</h2>
-    <h3 class="title is-4">SPARK Joint Following</h3>
+
+    
+    <div class="content">
+      <h2 class="title is-3">Intuitions</h2>
+    </div>
+
+    <div class="content">
+      <h3 class="title is-4">SPARK Joint Following</h3>
+    </div>
     <pre><code class="language-python">
 while(true):
     theta = torch.tensor(receive.getActualQ(), requires_grad=True)
@@ -257,10 +264,12 @@ while(true):
         The gradient is taken with respect to the loss
         The velocity is set based on the gradient (Minimize loss → Optimize <em>theta</em> for <em>total_spark_loss</em> → Gradient descent is literally moving joints → Hardware parameter update).
         SpeedJ controls the UR5e.
-        The loop starts again at <em>theta</em>.
+        The loop starts again with reading the updated <em>theta</em> from the arms. 
     </p>
 
-    <h3>Force:</h3>
+    <div class="content">
+      <h3>Force Controller:</h3>
+    </div>
 
     <pre><code class="language-python">
 while(true):
@@ -307,19 +316,14 @@ while(true):
         Similarly to SPARK, the gradient is taken, and the loss is physically backpropagated.
     </p>
 
-    <h2>Current Problems:</h2>
-    <ul>
-        <li>Not as responsive as ServoJ yet.</li>
-        <li>Does not account for momentum → still e-stops when moving fast.</li>
-        <li>Acceleration makes the arm sound jittery</li>
-        <li>Coefficient tuning is hard. Difficult to understand what works well vs problematic.</li>
-    </ul>
 
-    <h2>Videos:</h2>
-    <p><a href="https://prod-files-secure.s3.us-west-2.amazonaws.com/a84e7197-7257-4af2-8f8a-62145af70c90/927be228-1d7e-4a4e-a25f-37542dab97be/na.webm">na.webm</a></p>
 
-    <h2>Cartesian IK:</h2>
-    <p>Not tested with SpeedJ</p>
+    <br>
+    <div class="content">
+      <h2 class="title is-3">Inverse Kinematics:</h2>
+    <div class="content">
+      <h2 class="title is-3">Cartesian IK</h2>
+    </div>
 
     <pre><code class="language-python">
 ur5e_DH = [
